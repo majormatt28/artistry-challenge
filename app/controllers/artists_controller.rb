@@ -19,12 +19,19 @@ class ArtistsController < ApplicationController
     def create
         @artist = Artist.create(artist_params)
 
-        if @artist.valid?
-            rediect_to artist_path(@artist.id)
-        else
-            flash[:errors] = @snack.errors.full_messages
-            redirect_to artist_path(@artist.id)
-        end
+        redirect_to artist_path(@artist.id)
+        
+    end
+
+    def update
+    end
+
+    def delete
+        @artist = Artist.create(artist_params)
+
+        @artist.destroy
+
+        redirect_to artists_path
     end
 
     private
