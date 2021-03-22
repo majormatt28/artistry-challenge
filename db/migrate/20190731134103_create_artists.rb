@@ -4,6 +4,7 @@ class CreateArtists < ActiveRecord::Migration[5.2]
       t.string :name
       t.integer :age
       t.string :title
+      t.integer :instrument_id
 
       t.timestamps
     end
